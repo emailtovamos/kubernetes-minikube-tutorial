@@ -19,7 +19,7 @@ After this we will see how to:
 
     View application logs
     
-    Update the application image
+    Update the application
     
 Eventually we will do the cleanup the resources we created in the cluster. 
 
@@ -189,3 +189,20 @@ Here POD-NAME can be got by executing:
 
     kubectl get pods
 
+## Update the application
+
+Edit the `server.js`: 
+
+    response.end('Namaste World Again!');
+
+Build new version of the image: 
+
+    docker build -t hello-node:v2 .
+    
+Update image of the Deployment: 
+
+    kubectl set image deployment/hello-node hello-node=hello-node:v2
+    
+Rerun the application: 
+
+    minikube service hello-node
