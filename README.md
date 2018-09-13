@@ -89,7 +89,7 @@ will show "Namaste World!" at http://localhost:8080
 
 Next is to package the application in a Docker container so that it can be deployed.
 
-# Create Dockerfile & Turn the Node.js program into a Docker container image & build
+## Create Dockerfile & Turn the Node.js program into a Docker container image & build
 
 Create a file named ```Dockerfile``` inside the same folder where ```server.js``` is. A Dockerfile describes the **image** we want to build. An image of an application basically has all the instructions for a complete and executable version of the application. An instance of an image is called a **container**. One can have many running containers of the same image. One can build a Docker container image by extending an existing image. Here we extend an exsting Node.js image in the Dockerfile: 
 
@@ -159,4 +159,23 @@ Configuration of kubectl can be seen:
     
 ## Create a Service
 
+    kubectl expose deployment hello-node --type=LoadBalancer
+    
+Output: 
 
+    service "hello-node" exposed
+    
+View the service: 
+
+    kubectl get services
+    
+Output: 
+
+    NAME         TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+    hello-node   LoadBalancer   10.103.238.64   <pending>     8080:30918/TCP   41m
+    kubernetes   ClusterIP      10.96.0.1       <none>        443/TCP          21h
+
+On Minikube the `LoadBalancer` type makes the service accessible through `minikube service` command: 
+
+    minikube service hello-node
+    
