@@ -108,7 +108,7 @@ So now we build the Docker image, using the Minikube Docker daemon:
 
     docker build -t hello-node:v1 .
     
-# Run the image on Minikube by creating a Deployment
+## Run the image on Minikube by creating a Deployment
 
 A Kubernetes cluster has a `Master` & `Nodes`. The applications run on Nodes. Nodes have the containerized applications which run on them. A `Deployment` is responsible for creating and updating the instances of our applications. Deployment instructs Kubernetes how to create and update instances of our applications. Once application instances are created, Kubernetes Deployment controller continuously monitors those instances. For example, if a Node goes down then the Deployment controller replaces it. 
 
@@ -179,3 +179,13 @@ On Minikube the `LoadBalancer` type makes the service accessible through `miniku
 
     minikube service hello-node
     
+## View application logs
+
+If we have sent requests to the new web service either by browser or by curl the we can see some logs: 
+
+    kubectl logs <POD-NAME> 
+    
+Here POD-NAME can be got by executing: 
+
+    kubectl get pods
+
