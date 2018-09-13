@@ -206,3 +206,23 @@ Update image of the Deployment:
 Rerun the application: 
 
     minikube service hello-node
+
+## Cleanup
+
+Cleanup resources in cluster: 
+
+    kubectl delete service hello-node
+    kubectl delete deployment hello-node
+    
+Force remove Docker images: 
+
+    docker rmi hello-node:v1 hello-node:v2 -f
+
+Stop Minikube virtual machine: 
+
+    minikube stop
+    eval $(minikube docker-env -u)
+    
+Delete Minikube virtual machine: 
+
+    minikube delete
