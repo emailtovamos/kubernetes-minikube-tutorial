@@ -226,3 +226,5 @@ Stop Minikube virtual machine:
 Delete Minikube virtual machine: 
 
     minikube delete
+
+That's it for now! Be sure to check out the [blog post](http://tennexas.com/kubernetes-minikube-tutorial/) & the [regular blog](http://tennexas.com/tech-posts/) to learn more about DevOps & microservices. 
