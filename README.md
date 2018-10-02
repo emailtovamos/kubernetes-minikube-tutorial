@@ -35,6 +35,12 @@ Install [Docker](https://docs.docker.com/docker-for-mac/)
 
 Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads). This will be the detault Virtual Machine driver. 
 
+Next install Kubectl which is the Kubernetes command-line tool to manage applications on Kubernetes.
+
+Install [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl)
+
+    brew install kubernetes-cli
+
 ## Create Minikube cluster
 
 Install latest release of Minikube:
