@@ -59,7 +59,11 @@ Assuming [no proxy is required](https://kubernetes.io/docs/tutorials/hello-minik
 
     minikube start
     
-**kubectl** needs to know which cluster it is interacting with because there can be multiple cluster options. All the available contexts in **~/.kube/config** file. So ```open ~/.kube/config``` to see. 
+**kubectl** needs to know which cluster it is interacting with because there can be multiple cluster options. All the available contexts in **~/.kube/config** file. So ```open ~/.kube/config``` to see. If you want to see all the contexts then use the command: 
+
+    kubectl config get-contexts
+
+This will show you all the available contexts for you to chose from. 
 
 Since we want to interact with the Minikube cluster, we have to set the context: 
 
